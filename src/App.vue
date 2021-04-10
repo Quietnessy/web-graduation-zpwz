@@ -3,7 +3,7 @@
     <div id="nav">
       <Menu></Menu>
     </div>
-   <router-view></router-view>
+    <router-view></router-view>
   </div>
 </template>
 <script>

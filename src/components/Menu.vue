@@ -1,6 +1,6 @@
 <template>
   <div class="menu-container">
-    <Menu theme="light" mode="horizontal" :active-name="activeItem" :open-names="openMenu" @on-select="gotoPage">
+    <Menu theme="light" mode="horizontal" :active-name="activeItem" :open-names="openMenu" @on-select="gotoPage" class="my-menu">
       <div v-for="(menuItem, menuIndex) in menuList" :key="menuIndex">
         <Submenu :name="menuItem.name" v-if="menuItem.children && menuItem.children.length > 0">
           <template slot="title">
@@ -14,11 +14,11 @@
             </MenuItem>
           </template>
         </Submenu>
-        <MenuItem v-else :name="menuItem.path">
+        <MenuItem v-else :name="menuItem.path" class="menu-item">
             {{ menuItem.name }}
         </MenuItem>
       </div>
-      
+      <div class="user-name">{{ userName }}</div>
     </Menu>
   </div>
 </template>
@@ -30,7 +30,8 @@ export default {
     return {
       menuList: [],
       openMenu: [],
-      activeItem: ''
+      activeItem: '',
+      userName: 'xiaoxuyang_i'
     }
   },
   created () {
@@ -61,7 +62,19 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.menu-container{
-  background-color: #31c27c
-}
+.menu-container
+  .my-menu
+    padding-left 230px
+    background-color black
+    color #ffffff
+    height 50px
+    line-height 50px
+    .menu-item
+      width 100px
+      height 50px
+      color #ffffff
+      text-align center
+  .user-name
+    position absolute
+    right 20%
 </style>

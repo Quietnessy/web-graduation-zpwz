@@ -9,6 +9,8 @@ import MoneyManage from '../views/Content/Money.vue'
 import FinderIndex from '../views/Search/FinderIndex.vue'
 import Campus from '../views/Campus/CampusIndex.vue'
 import Company from '../views/Company/CompanyIndex.vue'
+import Account from '../views/Account/index.vue'
+import Login from '../views/Login/LoginIndex.vue'
 const routes = [
   {
     path: '/',
@@ -63,6 +65,16 @@ const routes = [
     path: '/company',
     name: '公司',
     component: Company
+  },
+  {
+    path: '/account',
+    name: '个人中心',
+    component: Account
+  },
+  {
+    path: '/login',
+    name: '登录/注册',
+    component: Login
   }
 ]
 
