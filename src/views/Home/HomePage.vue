@@ -10,7 +10,7 @@
             <Option value="day">Day</Option>
             <Option value="month">Month</Option>
         </Select> -->
-        <Button slot="append" icon="ios-search" class="search-btn"></Button>
+        <Button slot="append" icon="ios-search" class="search-btn" @click="handleSearch"></Button>
       </Input>
       <!-- 左侧职位分类卡片 -->
       <Card :bordered="false" class="left-card">
@@ -46,6 +46,14 @@ export default {
   data () {
     return {
       value2: 0
+    }
+  },
+  methods: {
+    handleSearch () {
+      this.$router.push({
+        name: '职位',
+        params: { id: '12121' }
+      })
     }
   }
 }

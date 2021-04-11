@@ -35,6 +35,11 @@ export default {
       userName: 'xiaoxuyang_i'
     }
   },
+  watch:{
+    $route(to,from){
+      this.configActiveMenu()
+    }
+  },
   created () {
     this.menuList = routes
     this.configActiveMenu()

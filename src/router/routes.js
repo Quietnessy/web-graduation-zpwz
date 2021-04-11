@@ -1,11 +1,11 @@
 // 资产管理
-import AssetIndex from '../views/Assets/index.vue'
-// import Assets from '../views/Assets/AssetList.vue'
-import Home from '../views/Assets/AssetList.vue'
+import AssetIndex from '../views/Home/index.vue'
+
+import Home from '../views/Home/HomePage.vue'
 
 // 内容管理
 import ContentIndex from '../views/Content/index.vue'
-// import Content from '../views/Content/ContentList.vue'
+import Content from '../views/Content/ContentList.vue'
 import MoneyManage from '../views/Content/Money.vue'
 import FinderIndex from '../views/Search/FinderIndex.vue'
 import Campus from '../views/Campus/CampusIndex.vue'
@@ -33,7 +33,7 @@ const routes = [
   {
     path: '/content',
     name: '职位',
-    component: ContentIndex,
+    component: Content,
     meta: {
       isMenuItem: true
     }

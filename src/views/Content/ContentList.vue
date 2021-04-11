@@ -1,8 +1,13 @@
 <template>
-    <Table stripe :columns="columns1" :data="data1"></Table>
+    <div>
+        <Table stripe :columns="columns1" :data="data1"></Table>
+        <Button type="dashed" @click="getPara">Dashed</Button>
+    </div>
 </template>
 <script>
     export default {
+        mounted () {
+        },
         data () {
             return {
                 columns1: [
@@ -45,6 +50,11 @@
                         date: '2016-10-04'
                     }
                 ]
+            }
+        },
+        methods:{
+            getPara () {
+                console.log(this.$route, 'this.$route')
             }
         }
     }
