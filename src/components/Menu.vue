@@ -1,5 +1,6 @@
 <template>
   <div class="menu-container">
+    <img src="https://static.zhipin.com/zhipin-geek/v399/web/geek/images/logo-2x.png" alt="招聘logo" class="icon-logo">
     <Menu theme="light" mode="horizontal" :active-name="activeItem" :open-names="openMenu" @on-select="gotoPage" class="my-menu">
       <div v-for="(menuItem, menuIndex) in menuList" :key="menuIndex">
         <Submenu :name="menuItem.name" v-if="menuItem.children && menuItem.children.length > 0">
@@ -14,7 +15,7 @@
             </MenuItem>
           </template>
         </Submenu>
-        <MenuItem v-else :name="menuItem.path" class="menu-item">
+        <MenuItem v-else-if="menuItem.meta.isMenuItem" :name="menuItem.path" class="menu-item">
             {{ menuItem.name }}
         </MenuItem>
       </div>
@@ -63,16 +64,21 @@ export default {
 
 <style lang="stylus" scoped>
 .menu-container
+  position relative
+  .icon-logo
+    width 110px
+    position absolute
+    left 10%
+    top 30%
+    z-index 1000
   .my-menu
-    padding-left 230px
-    background-color black
-    color #ffffff
+    padding-left 21%
+    border-bottom none
     height 50px
     line-height 50px
     .menu-item
       width 100px
       height 50px
-      color #ffffff
       text-align center
   .user-name
     position absolute

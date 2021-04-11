@@ -21,4 +21,8 @@ export default {
 }
 </script>
 <style lang="stylus">
+#app
+ background-color #f6f6f8
+ input
+  font-size 13px
 </style>

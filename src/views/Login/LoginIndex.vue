@@ -10,10 +10,10 @@
             <Input v-model="formInline.password" prefix="ios-lock-outline" placeholder="请输入密码" size="large" type="password" password/>
           </FormItem>
           <FormItem class="form-item" style="margin-top: 30px">
-            <Button type="info" ghost long @click="btnLogin">立 即 登 录</Button>
+            <Button type="info" ghost long @click="btnLogin" icon="md-checkmark">立 即 登 录</Button>
           </FormItem>
           <div class="forget-container">
-            <span @click="forgetPassword">修改密码?</span> | <span @click="register">立即注册</span>
+            <span @click="forgetPassword">修改密码?</span> | <span @click="register">免费注册</span>
           </div>
         </Form>
       </Card>
@@ -29,7 +29,7 @@
             <Input v-model="formRegister.senewpassword" prefix="ios-lock-outline" placeholder="请再次输入新密码" size="large" type="password" password/>
           </FormItem>
           <FormItem class="form-item" style="margin-top: 30px">
-            <Button type="info" ghost long @click="btnChangePaassword">确 认</Button>
+            <Button type="info" ghost long @click="btnChangePaassword" icon="md-checkmark">确 认</Button>
           </FormItem>
           <div class="forget-container">
             <span @click="gotoLogin">登 录</span> | <span @click="register">注 册</span>
@@ -49,7 +49,7 @@
             <Input v-model="formRegister.sepassword" prefix="ios-lock-outline" placeholder="请再次输入新密码" size="large" type="password" password/>
           </FormItem>
           <FormItem class="form-item" style="margin-top: 30px">
-            <Button type="info" ghost long @click="btnRegister">立 即 注 册</Button>
+            <Button type="info" ghost long @click="btnRegister" icon="md-checkmark">立 即 注 册</Button>
           </FormItem>
           <div class="forget-container">
             <span @click="gotoLogin">已有账号?立即登录>></span>
@@ -149,7 +149,8 @@ export default {
   width 100%
   height 94.7%
   position absolute
-  background-image url(https://hellorfimg.zcool.cn/preview260/762243406.jpg)
+  background-color #00d7c6
+  background-image url(https://static.zhipin.com/zhipin-geek/v396/web/geek/images/newbg.png)
   background-repeat no-repeat
   background-position left
   background-attachment fixed
@@ -159,9 +160,9 @@ export default {
     .card-login
     .card-register
     .card-changepassword
-      background-color #f1f1f1
+      background-color #f8fcff
       border 1px solid #ccc
-      border-radius 20px
+      border-radius 5px
       padding-left 1.4%
       width 32%
       position absolute

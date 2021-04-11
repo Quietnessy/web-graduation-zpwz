@@ -1,6 +1,7 @@
 // 资产管理
 import AssetIndex from '../views/Assets/index.vue'
 // import Assets from '../views/Assets/AssetList.vue'
+import Home from '../views/Assets/AssetList.vue'
 
 // 内容管理
 import ContentIndex from '../views/Content/index.vue'
@@ -16,65 +17,66 @@ const routes = [
     path: '/',
     name: '首页',
     component: AssetIndex,
-    // redirect: '/asset',
-    // children: [
-    //   {
-    //     path: '/asset',
-    //     name: '首页       ',
-    //     component: AssetIndex,
-    //     meta: {
-    //       isMenuItem: true
-    //     }
-    //   },
-    //   {
-    //     path: '/assets-info',
-    //     name: '资产列表',
-    //     component: Assets,
-    //     meta: {
-    //       isMenuItem: true
-    //     }
-    //   }
-    // ]
+    redirect: '/home',
+    meta: {
+      isMenuItem: false
+    }
+  },
+  {
+    path: '/home',
+    name : '首页',
+    component: Home,
+    meta: {
+      isMenuItem: true
+    }
   },
   {
     path: '/content',
     name: '职位',
     component: ContentIndex,
-    // children: [
-    //   {
-    //     path: '/content-info',
-    //     name: '内容列表',
-    //     component: Content,
-    //     meta: {
-    //       isMenuItem: true
-    //     }
-    //   }
-    // ]
+    meta: {
+      isMenuItem: true
+    }
   },
   {
     path: '/search',
     name: '发现',
-    component: FinderIndex
+    component: FinderIndex,
+    meta: {
+      isMenuItem: true
+    }
   },
   {
     path: '/campus',
     name: '校园',
-    component: Campus
+    component: Campus,
+    meta: {
+      isMenuItem: true
+    }
   },
   {
     path: '/company',
     name: '公司',
-    component: Company
+    component: Company,
+    meta: {
+      isMenuItem: true
+    }
   },
   {
     path: '/account',
     name: '个人中心',
-    component: Account
+    component: Account,
+    meta: {
+      isMenuItem: true
+    }
   },
   {
     path: '/login',
     name: '登录/注册',
-    component: Login
+    component: Login,
+    meta: {
+      isMenuItem: true
+    }
   }
 ]
 
