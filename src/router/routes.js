@@ -2,11 +2,11 @@
 import AssetIndex from '../views/Home/index.vue'
 
 import Home from '../views/Home/HomePage.vue'
+import notFound from '../views/Home/404.vue'
 
 // 内容管理
-import ContentIndex from '../views/Content/index.vue'
-import Content from '../views/Content/ContentList.vue'
-import MoneyManage from '../views/Content/Money.vue'
+import PositionIndex from '../views/Position/index.vue'
+import Position from '../views/Position/PositionIndex.vue'
 import FinderIndex from '../views/Search/FinderIndex.vue'
 import Campus from '../views/Campus/CampusIndex.vue'
 import Company from '../views/Company/CompanyIndex.vue'
@@ -31,9 +31,9 @@ const routes = [
     }
   },
   {
-    path: '/content',
+    path: '/position',
     name: '职位',
-    component: Content,
+    component: Position,
     meta: {
       isMenuItem: true
     }
@@ -76,6 +76,14 @@ const routes = [
     component: Login,
     meta: {
       isMenuItem: true
+    }
+  },
+  {
+    path: '/notfound',
+    name: '404页面',
+    component: notFound,
+    meta: {
+      isMenuItem: false
     }
   }
 ]

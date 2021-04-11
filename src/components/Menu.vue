@@ -36,8 +36,11 @@ export default {
     }
   },
   watch:{
-    $route(to,from){
+    $route(to, from, next){
       this.configActiveMenu()
+      if (to.matched.length === 0) {
+        this.$router.push('/notfound')
+      }
     }
   },
   created () {
