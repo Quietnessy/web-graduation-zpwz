@@ -6,6 +6,8 @@ import notFound from '../views/Home/404.vue'
 
 // 内容管理
 import PositionIndex from '../views/Position/index.vue'
+import PositionDetail from '../views/Position/PositionDetails.vue'
+import OnlineResume from '../views/Account/OnlineResume.vue'
 import Position from '../views/Position/PositionIndex.vue'
 import FinderIndex from '../views/Search/FinderIndex.vue'
 import Campus from '../views/Campus/CampusIndex.vue'
@@ -82,6 +84,22 @@ const routes = [
     path: '/notfound',
     name: '404页面',
     component: notFound,
+    meta: {
+      isMenuItem: false
+    }
+  },
+  {
+    path: '/postiondetails',
+    name: '职位详情',
+    component: PositionDetail,
+    meta: {
+      isMenuItem: false
+    }
+  },
+  {
+    path: '/onlineresume',
+    name: '在线简历',
+    component: OnlineResume,
     meta: {
       isMenuItem: false
     }
