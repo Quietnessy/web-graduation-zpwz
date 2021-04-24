@@ -32,7 +32,7 @@ export default {
       menuList: [],
       openMenu: [],
       activeItem: '',
-      userName: 'xiaoxuyang_i'
+      userName: ''
     }
   },
   watch:{

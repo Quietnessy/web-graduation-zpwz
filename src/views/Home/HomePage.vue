@@ -158,7 +158,9 @@
 export default {
   data () {
     return {
-      value2: 0
+      value2: 0,
+      value13: '',
+      username: ''
     }
   },
   methods: {
@@ -167,6 +169,9 @@ export default {
         name: '职位',
         params: { id: '12121' }
       })
+    },
+    getUsername () {
+      
     }
   }
 }

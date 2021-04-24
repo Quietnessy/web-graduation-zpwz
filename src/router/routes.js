@@ -14,6 +14,7 @@ import Campus from '../views/Campus/CampusIndex.vue'
 import Company from '../views/Company/CompanyIndex.vue'
 import Account from '../views/Account/index.vue'
 import Login from '../views/Login/LoginIndex.vue'
+import Recode from '../views/Account/Recode.vue'
 const routes = [
   {
     path: '/',
@@ -67,6 +68,7 @@ const routes = [
   {
     path: '/account',
     name: '个人中心',
+    redirect: '/recode',
     component: Account,
     meta: {
       isMenuItem: true
@@ -100,6 +102,14 @@ const routes = [
     path: '/onlineresume',
     name: '在线简历',
     component: OnlineResume,
+    meta: {
+      isMenuItem: false
+    }
+  },
+  {
+    path: '/recode',
+    name: '投递记录',
+    component: Recode,
     meta: {
       isMenuItem: false
     }

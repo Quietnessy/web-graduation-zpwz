@@ -65,10 +65,7 @@ export default {
   data () {
     return {
       curCard: 'login',
-      formInline: {
-        user: '',
-        password: ''
-      },
+      formInline: {},
       formRegister: {},
       formchaPassword: {},
       ruleInline: {
@@ -123,16 +120,41 @@ export default {
       this.curCard = 'login'
     },
     btnLogin () {
-      this.$Message.success({
-         background: true,
-         content: '登 录 成 功'
+      if (this.formInline.user === '') {
+        this.$Message.warning({ background: true, content: '用户名不能为空' })
+        return
+      }
+      if (this.formInline.password === '') {
+        this.$Message.warning({ background: true, content: '密码不能为空' })
+        return
+      }
+      if (this.formInline.user !== 'xiaoxuyang') {
+        this.$Message.warning({ background: true, content: '用户名不存在' })
+        return
+      }
+      if (this.formInline.password !== '123456') {
+        this.$Message.warning({ background: true, content: '密码错误' })
+        return
+      }
+      this.$Message.success({ background: true, content: '登 录 成 功' })
+      this.$router.push({
+        name: '首页',
+        params: { username: 'xiaoxuyang_i' }
       })
     },
     btnRegister () {
-      this.$Message.success({
-         background: true,
-         content: '注 册 成 功'
-      })
+      if (this.formRegister.user === '' || this.formRegister.password === '' || this.formRegister.sepassword === '') {
+        this.$Message.warning({
+          background: true,
+          content: '表单字段不能为空，请完善表单~'
+        })
+        return
+      }
+      if (this.formRegister.user === 'xiaoxuyang' && this.formRegister.password === '123456' && this.formRegister.sepassword === '123456') {
+        this.$Message.success({ background: true, content: '注 册 成 功' })
+        return
+      }
+      this.$Message.warning({ background: true, content: '密码与确认密码不一致' })
     },
     btnChangePaassword () {
       this.$Message.success({

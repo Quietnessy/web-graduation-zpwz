@@ -132,6 +132,7 @@ export default {
       curSalary: '',
       curFinancing: '',
       curScale: '',
+      value13: ''
     }
   },
   methods: {
