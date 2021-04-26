@@ -61,6 +61,8 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
+import { mapState } from "vuex";
 export default {
   data () {
     return {
@@ -107,6 +109,7 @@ export default {
     }
   },
   methods: {
+    // ...mapActions(['setUserName']),
     // 点击去注册模块
     register () {
       this.curCard = 'register'
@@ -137,6 +140,8 @@ export default {
         return
       }
       this.$Message.success({ background: true, content: '登 录 成 功' })
+      // this.setUserName('xiaoxuyang_XIAOXUYANG')
+      this.$store.commit('setUserName', 'xiaoxuyang_XIAOXUYANG');
       this.$router.push({
         name: '首页',
         params: { username: 'xiaoxuyang_i' }

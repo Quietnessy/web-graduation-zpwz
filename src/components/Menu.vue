@@ -19,20 +19,24 @@
             {{ menuItem.name }}
         </MenuItem>
       </div>
-      <div class="user-name">{{ userName }}</div>
+      <div class="user-name">{{ username }}</div>
     </Menu>
   </div>
 </template>
 
 <script>
 import routes from '../router/routes'
+import { mapState } from 'vuex'
 export default {
+  computed: {
+    ...mapState(['userName']),
+  },
   data () {
     return {
       menuList: [],
       openMenu: [],
       activeItem: '',
-      userName: ''
+      username: ''
     }
   },
   watch:{
@@ -41,6 +45,10 @@ export default {
       if (to.matched.length === 0) {
         this.$router.push('/notfound')
       }
+    },
+    userName (curVal) {
+      console.log('用户名称改变了')
+      this.username = curVal
     }
   },
   created () {

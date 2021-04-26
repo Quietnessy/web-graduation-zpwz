@@ -151,16 +151,27 @@
       </div>
     </div>
     <div class="home-footer-container">
+      {{ userName }}
+      <!-- this.$store.state.userName -->
     </div>
   </div>
 </template>
 <script>
+import { mapState } from 'vuex';
 export default {
   data () {
     return {
       value2: 0,
       value13: '',
       username: ''
+    }
+  },
+  computed: {
+    ...mapState(['userName']),
+  },
+  watch: {
+    userName (currVal) {
+      this.username = currVal
     }
   },
   methods: {
