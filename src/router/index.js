@@ -1,17 +1,31 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import store from '@/store'
 import routes from './routes'
+import { Message } from 'view-design';
 Vue.use(VueRouter)
 const router = new VueRouter({
   routes
 })
-// router.beforeEach((to, from, next) => {
-//   console.log(to.matched, 'to.matched')
-//   // if (to.matched.length === 0) {
-//   //   next('/notfound') // 判断此跳转路由的来源路由是否存在，存在的情况跳转到来源路由，否则跳转到404页面
-//   // }
-//   console.log(to.matched)
-// })
+router.beforeEach((to, from, next) => {
+  // 判断是是否有对应的路由
+  if(to.matched.length === 0) {
+    next('/notfound')
+  }
+  // 如果是登录注册界面，则隐藏菜单栏
+  if (to.path === '/login') {
+    store.commit('setCurrouter', true)
+    next()
+  } else {
+    store.commit('setCurrouter', false)
+    next()
+  }
+  if (store.state.userName === '') {
+    Message.info({ background: true, content: '您尚未登录，请登录' })
+    next('/login')
+  }
+  next()
+})
 
   // 判断是否有登录过
   // if (getCookie('userId_dev')) {

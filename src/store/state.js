@@ -2,5 +2,7 @@ export default {
   userName: '',
   isLogin: false,
   searchKeys: '',
-  userImageUrl: ''
+  userImageUrl: '',
+  isHideMenu: false,
+  curRole: '',
 }

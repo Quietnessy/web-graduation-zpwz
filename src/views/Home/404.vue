@@ -8,13 +8,16 @@
 <script>
 export default {
   data () {
-
+    return {
+      
+    }
   }
 }
 </script>
 
 <style lang="stylus" scoped>
 .not-found
+  opacity 0.7
   padding 20px
   box-sizing border-box
   height 100vh

@@ -6,10 +6,6 @@
     </div>
     <div class="home-main-container">
       <Input v-model="value13" class="search-input" size="large" style="padding-left: 50px">
-        <!-- <Select v-model="select3" slot="prepend" style="width: 80px">
-            <Option value="day">Day</Option>
-            <Option value="month">Month</Option>
-        </Select> -->
         <Button slot="append" icon="ios-search" class="search-btn" @click="handleSearch"></Button>
       </Input>
       <!-- 左侧职位分类卡片 -->
@@ -44,7 +40,7 @@
         </div>
         <div class="box-card-container">
           <ul>
-            <li class="li-container-recommend">
+            <li class="li-container-recommend" @click="gotoPosition">
               <div style="margin-bottom: 10px">
                 <p style="font-size: 15px" class="position-name">前端开发实习生 <span style="color: #FD7240;margin-left: 40%">180-250元/天</span></p>
                 <p style="color: #8D92A1; margin-top: 10px">3个月 | 本科</p>
@@ -150,8 +146,7 @@
         </div>
       </div>
     </div>
-    <div class="home-footer-container">
-      {{ userName }}
+    <div class="home-footer-container"> 
       <!-- this.$store.state.userName -->
     </div>
   </div>
@@ -163,19 +158,17 @@ export default {
     return {
       value2: 0,
       value13: '',
-      username: ''
     }
   },
   computed: {
     ...mapState(['userName']),
   },
-  watch: {
-    userName (currVal) {
-      this.username = currVal
-    }
-  },
   methods: {
+    gotoPosition () {
+      this.$router.push('/postiondetails')
+    },
     handleSearch () {
+      this.$store.commit('setCursearchKeys', this.value13);
       this.$router.push({
         name: '职位',
         params: { id: '12121' }
@@ -204,7 +197,7 @@ export default {
       top 12%
   .home-main-container
     position relative
-    height 3000px
+    height 2400px
     width 77%
     margin 0 auto
     .search-input
@@ -216,6 +209,7 @@ export default {
         color #fff
         border none
         background-color #5dd5c8
+        border-radius 0
     .left-card
       width 23%
       height 340px
@@ -235,8 +229,8 @@ export default {
     .car-container
       position absolute
       right 0px
-      top 3%
-      width 880px
+      top 3.7%
+      width 850px
       height 340px
       padding-left 10px
       .car-item
@@ -256,8 +250,8 @@ export default {
         .clearfix
           clear both
         .li-container-recommend
-          width 380px
-          height 130px
+          width 32.5%
+          height 150px
           background-color #fff
           padding 16px 20px
           float left
@@ -279,7 +273,7 @@ export default {
           clear both
         .li-container-hot
           text-align center
-          width 280px
+          width 24%
           height 238px
           padding 50px
           background-color #fff

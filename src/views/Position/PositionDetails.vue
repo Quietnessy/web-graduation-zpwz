@@ -24,7 +24,7 @@
                     <div class="btn-chat">⽴即沟通</div>
                     <div style="margin-top: 50px;color: #5ed5c8; font-size: 16px;">
                     <div style="margin-left: 13px; cursor: pointer; float: left;" icon="ios-search" @click="fillOnlineResume"><Icon type="ios-albums" /> 完善在线简历</div>
-                    <div style="margin-left: 40px; cursor: pointer; float: left;" icon="ios-search"><Icon type="ios-arrow-dropup-circle" /> 新增附件简历</div>
+                    <div style="margin-left: 40px; cursor: pointer; float: left;" icon="ios-search" @click="uploadResume"><Icon type="ios-arrow-dropup-circle" /> 新增附件简历</div>
                 </div>
                 </div>
             </div>
@@ -130,6 +130,9 @@ export default {
  },
  methods: {
     fillOnlineResume () {
+        this.$router.push('/editonlineresume')
+    },
+    uploadResume () {
         this.$router.push('/onlineresume')
     }
  }

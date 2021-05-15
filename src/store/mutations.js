@@ -17,4 +17,15 @@ export const setUserName = (state, curVal) => {
   console.log('=调用了Vuex')
   state.userName = curVal
 }
+
+// 设置是否隐藏导航菜单（当是登录界面的时候就隐藏菜单栏）
+export const setCurrouter = (state, curVal) => {
+  state.isHideMenu = curVal
+}
+
+// 设置当前用户的角色（求职者、招聘者）
+export const setCurRole = (state, curVal) => {
+  state.curRole = curVal
+}
+
  

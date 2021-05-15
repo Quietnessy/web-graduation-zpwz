@@ -105,10 +105,11 @@
             <div style="font-size: 13px"><span style="color: #fc703e; margin-right: 20px">30-60K·16薪</span>3-5 年 | 本科 张女士 | HR</div>
           </div>
           <div class="info-right">
-            <p class="comname">快手</p>
+            <p class="comname">Boss</p>
             <p style="font-size: 13px">社交网络 | 已上市 | 10000人以上</p>
             <img src="https://img.bosszhipin.com/beijin/mcs/banner/3e9d37e9effaa2b6daf43f3f03f7cb15cfcd208495d565ef66e7dff9f98764da.jpg" alt="快手">
           </div>
+          <div style="clear: both;"></div>
         </div>
         <div class="info-append">
           <div class="func-container">
@@ -118,6 +119,55 @@
             <div class="fun-item">数据分析</div>
           </div>
           <p class="welfare">年终奖，定期体检，带薪年假，加班补助，包吃，股票期权</p>
+          <div style="clear: both;"></div>
+        </div>
+      </div>
+      <div class="job-primary" @click="gotoDetails">
+        <div class="info-primary">
+          <div class="info-left">
+            <p>中后台产品经理（数据平台）[北京·海淀区·上地]</p>
+            <div style="font-size: 13px"><span style="color: #fc703e; margin-right: 20px">30-60K·16薪</span>3-5 年 | 本科 张女士 | HR</div>
+          </div>
+          <div class="info-right">
+            <p class="comname">字节跳动</p>
+            <p style="font-size: 13px">社交网络 | 已上市 | 10000人以上</p>
+            <img src="https://img.bosszhipin.com/beijin/mcs/chatphoto/20201123/424d60a634b16f6d498bb81a1ecc4fb882e5997348729a6cfe816ad90c892e55_s.jpg" alt="快手">
+          </div>
+          <div style="clear: both;"></div>
+        </div>
+        <div class="info-append">
+          <div class="func-container">
+            <div class="fun-item">产品设计</div>
+            <div class="fun-item">后台产品</div>
+            <div class="fun-item">商业产品</div>
+            <div class="fun-item">数据分析</div>
+          </div>
+          <p class="welfare">年终奖，定期体检，带薪年假，加班补助，包吃，股票期权</p>
+          <div style="clear: both;"></div>
+        </div>
+      </div>
+      <div class="job-primary" @click="gotoDetails">
+        <div class="info-primary">
+          <div class="info-left">
+            <p>中后台产品经理（数据平台）[北京·海淀区·上地]</p>
+            <div style="font-size: 13px"><span style="color: #fc703e; margin-right: 20px">30-60K·16薪</span>3-5 年 | 本科 张女士 | HR</div>
+          </div>
+          <div class="info-right">
+            <p class="comname">网易</p>
+            <p style="font-size: 13px">社交网络 | 已上市 | 10000人以上</p>
+            <img src="https://img.bosszhipin.com/beijin/mcs/chatphoto/20200424/a6b7e12e59c797fe3defd1ba6b163db0fd17edca5c902374e3c4007d899331b4_s.jpg" alt="快手">
+          </div>
+          <div style="clear: both;"></div>
+        </div>
+        <div class="info-append">
+          <div class="func-container">
+            <div class="fun-item">产品设计</div>
+            <div class="fun-item">后台产品</div>
+            <div class="fun-item">商业产品</div>
+            <div class="fun-item">数据分析</div>
+          </div>
+          <p class="welfare">年终奖，定期体检，带薪年假，加班补助，包吃，股票期权</p>
+          <div style="clear: both;"></div>
         </div>
       </div>
     </div>
@@ -125,6 +175,9 @@
 </template>
 <script>
 export default {
+  mounted () {
+    this.value13 = this.$store.state.searchKeys
+  },
   data () {
     return {
       curWorkexperience: '',
@@ -177,6 +230,9 @@ export default {
           color #fff
           border none
           background-color #5dd5c8
+          border-radius 0
+          border none
+          outline none
     .select-container
       border 1px solid #ccc
       text-align center
@@ -221,6 +277,7 @@ export default {
             width 56px
             height 56px
       .info-append
+        margin-bottom 20px
         cursor pointer
         .func-container
           float left

@@ -26,4 +26,11 @@ export const setUserImage = ({ commit }, curVal) => {
 export const setUserName = ({ commit }, curVal) => {
   commit('setUserName', curVal)
 }
- 
+// 设置是否显示菜单
+export const setCurrouter = ({ commit }, curVal) => {
+  commit('setCurrouter', curVal)
+}
+// 设置当前角色
+export const setCurRole = ({ commit }, curVal) => {
+  commit('setCurRole', curVal)
+}

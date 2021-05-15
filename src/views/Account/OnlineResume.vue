@@ -5,40 +5,40 @@
       </div>
       <div class="main-container">
           <h1>编辑在线简历</h1>
-        <Form :model="formItem" :label-width="100">
-        <FormItem label="姓名">
+        <Form :model="formItem" :label-width="80" inline>
+        <FormItem label="姓名" class="form-item">
             <Input v-model="formItem.name" placeholder="请输入姓名..."></Input>
         </FormItem>
-        <FormItem label="电话">
+        <FormItem label="电话" class="form-item">
             <Input v-model="formItem.phonenum" placeholder="请输入电话..."></Input>
         </FormItem>
-        <FormItem label="邮箱">
+        <FormItem label="邮箱" class="form-item">
             <Input v-model="formItem.email" placeholder="请输入邮箱..."></Input>
         </FormItem>
-        <FormItem label="期望职位">
-            <Input v-model="formItem.hopeposition" placeholder="请输入期望职位..."></Input>
+        <FormItem label="期望职位" class="form-item">
+            <Input v-model="formItem.hopeposition" placeholder="请输入期望城市..."></Input>
         </FormItem>
-        <FormItem label="理想薪资">
+        <FormItem label="理想薪资" class="form-item">
             <Input v-model="formItem.hopeSalary" placeholder="请输入理想薪资..."></Input>
         </FormItem>
-        <FormItem label="当前求职状态" style="width: 300px">
+        <FormItem label="求职状态" style="width: 275px" class="form-item">
             <Select v-model="formItem.curstatus">
-                <Option value="beijing">离校-随时到港</Option>
+                <Option value="beijing">离校-随时到岗</Option>
                 <Option value="shanghai">在校-暂不考虑</Option>
                 <Option value="shenzhen">在校-考虑机会</Option>
                 <Option value="shenzhen">在校-月内到岗位</Option>
             </Select>
         </FormItem>
-        <FormItem label="出生日期">
-            <DatePicker type="date" placeholder="Select date" v-model="formItem.birthday"></DatePicker>
+        <FormItem label="出生日期" class="form-item">
+            <DatePicker type="date" placeholder="选择日期" v-model="formItem.birthday"></DatePicker>
         </FormItem>
-        <FormItem label="性别">
-            <RadioGroup v-model="formItem.sex">
+        <FormItem label="性别" class="form-item">
+            <RadioGroup v-model="formItem.sex" type="button" button-style="solid">
                 <Radio label="Male">男</Radio>
                 <Radio label="Female">女</Radio>
             </RadioGroup>
         </FormItem>
-        <FormItem label="工作城市" style="width: 300px">
+        <FormItem label="工作城市" style="width: 275px" class="form-item">
             <Select v-model="formItem.workcity">
                 <Option value="beijing">杭州</Option>
                 <Option value="shanghai">天津</Option>
@@ -46,27 +46,27 @@
                 <Option value="shenzhen">郑州</Option>
             </Select>
         </FormItem>
-        <FormItem label="个人优势">
-            <Input v-model="formItem.peradvantage" type="textarea" :autosize="{minRows: 2,maxRows: 5}" placeholder="Enter something..."></Input>
+        <FormItem label="个人优势" style="width: 550px">
+            <Input v-model="formItem.peradvantage" type="textarea" :autosize="{minRows: 2,maxRows: 5}" placeholder="在这里输入个人优势..."></Input>
         </FormItem>
-        <FormItem label="实习经历">
-            <Input v-model="formItem.internshipexperience" type="textarea" :autosize="{minRows: 2,maxRows: 5}" placeholder="Enter something..."></Input>
+        <FormItem label="实习经历" style="width: 550px">
+            <Input v-model="formItem.internshipexperience" type="textarea" :autosize="{minRows: 2,maxRows: 5}" placeholder="在这里输入实习经历..."></Input>
         </FormItem>
-        <FormItem label="项目经历">
-            <Input v-model="formItem.proexperence" type="textarea" :autosize="{minRows: 2,maxRows: 5}" placeholder="Enter something..."></Input>
+        <FormItem label="项目经历" style="width: 550px">
+            <Input v-model="formItem.proexperence" type="textarea" :autosize="{minRows: 2,maxRows: 5}" placeholder="在这里输入项目经历..."></Input>
         </FormItem>
-        <FormItem label="教育经历">
-            <Input v-model="formItem.educationexperence" type="textarea" :autosize="{minRows: 2,maxRows: 5}" placeholder="Enter something..."></Input>
+        <FormItem label="教育经历" style="width: 550px">
+            <Input v-model="formItem.educationexperence" type="textarea" :autosize="{minRows: 2,maxRows: 5}" placeholder="在这里输入教育经历..."></Input>
         </FormItem>
-        <FormItem label="资格证书">
-            <Input v-model="formItem.qualification" type="textarea" :autosize="{minRows: 2,maxRows: 5}" placeholder="Enter something..."></Input>
+        <FormItem label="资格证书" style="width: 550px">
+            <Input v-model="formItem.qualification" type="textarea" :autosize="{minRows: 2,maxRows: 5}" placeholder="在这里输入资格证书..."></Input>
         </FormItem>
-        <FormItem label="其他">
-            <Input v-model="formItem.others" type="textarea" :autosize="{minRows: 2,maxRows: 5}" placeholder="Enter something..."></Input>
+        <FormItem label="其他" style="width: 550px">
+            <Input v-model="formItem.others" type="textarea" :autosize="{minRows: 2,maxRows: 5}" placeholder="其他..."></Input>
         </FormItem>
-        <FormItem style="text-algin: center;">
-            <Button type="primary" style="margin-left: 20%" @click="submitForm">提 交</Button>
-            <Button style="margin-left: 50px" @click="resetForm">重 置</Button>
+        <FormItem style="text-algin: center;" class="form-item"> 
+            <Button type="primary" style="margin-left: 25%" @click="gotoMyonline">提 交</Button>
+            <Button style="margin-left: 10px">重 置</Button>
         </FormItem>
     </Form>
       </div>
@@ -80,16 +80,13 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      formItem: {}
+      formItem: {
+      }
     }
   },
   methods: {
-    resetForm () {
-        this.formItem = {}
-    },
-    submitForm () {
-        this.$Message.success({ background: true, content: '编辑成功' })
-        this.$router.push('/recode')
+    gotoMyonline () {
+        this.$router.push('/onlineresume')
     }
   }
 }
@@ -101,13 +98,16 @@ export default {
     padding: 100px;
 }
 .main-container {
-  width: 60%;
+  width: 65%;
   background-color: #fff;
   margin: 0 auto;
   padding: 10px 100px;
   border: 1px solid #7dd2c8;
   border-radius: 12px;
   padding-top: 50px;
+}
+.form-item{
+    width: 280px;
 }
 .main-container h1 {
     font-weight: 400;
